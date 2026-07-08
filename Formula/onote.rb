@@ -2,7 +2,7 @@ class Onote < Formula
   desc "Terminal-native, Obsidian-compatible Markdown vault client"
   homepage "https://github.com/AlanSynn/onote"
   url "https://github.com/AlanSynn/onote/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "1bc53ef0ac5de8e7aee0ef6d10f45e5584034420979c711a43876f3b34cc9a5d"
+  sha256 "fd2de60e4714811cf21f71ba8b88a3069e9d84e2cbb53f4d997d9363d3fc6177"
   license "MIT"
   head "https://github.com/AlanSynn/onote.git", branch: "main"
 
