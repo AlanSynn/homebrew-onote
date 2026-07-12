@@ -1,17 +1,22 @@
 class Onote < Formula
   desc "Terminal-native, Obsidian-compatible Markdown vault client"
   homepage "https://github.com/AlanSynn/onote"
-  url "https://github.com/AlanSynn/onote/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "98b8704f198f716f63fa03af92339c04cbc0499718840e3784b1070e6a6505ba"
+  version "0.4.1"
   license "MIT"
-  head "https://github.com/AlanSynn/onote.git", branch: "main"
 
-  # onote builds from source with Rust (>= 1.82 per Cargo.toml rust-version).
-  depends_on "rust" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/AlanSynn/onote/releases/download/v0.4.1/onote-aarch64-apple-darwin.tar.gz"
+      sha256 "39f07a68b36344fc77b4aa4eb97e3fc584307d3e4bcd1f5b9c999a595b039eb6"
+    end
+    on_intel do
+      url "https://github.com/AlanSynn/onote/releases/download/v0.4.1/onote-x86_64-apple-darwin.tar.gz"
+      sha256 "b06e1959b201455fdbfedfa31ba2b0bd7bd1de8147f3a438fed9705f31d6709d"
+    end
+  end
 
-  # The crate lives at the archive root; `cargo install` builds + installs it.
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "onote"
   end
 
   test do
